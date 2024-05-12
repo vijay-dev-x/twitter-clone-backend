@@ -4,12 +4,18 @@ import connectDB from "./config/connectDB.js";
 import cookieParser from "cookie-parser";
 import router from "./Routes/UserRoute.js";
 import tweet from "./Routes/TweetRoute.js";
+import cors from "cors";
 
 const app = express();
 config({
   path: ".env",
 });
 // middlewares---
+app.use(
+  cors({
+    origin: "https://twitter-clone-backend-ycez.onrender.com",
+  })
+);
 app.use("/api", router);
 app.use("/api", tweet);
 

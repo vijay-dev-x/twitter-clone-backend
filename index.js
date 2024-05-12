@@ -11,11 +11,7 @@ config({
   path: ".env",
 });
 // middlewares---
-app.use(
-  cors({
-    origin: "https://twitter-clone-backend-ycez.onrender.com",
-  })
-);
+app.use(cors());
 app.use("/api", router);
 app.use("/api", tweet);
 
